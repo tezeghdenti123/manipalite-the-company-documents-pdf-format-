@@ -1,0 +1,100 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #191c24;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    width: 700px;
+    height: 150px;
+    left: 50px;
+    top: 250px;
+}
+
+.form{
+    position: relative;
+    left: 100px;
+    top: 50px;
+}
+.submit{
+    color: #fff;
+    background-color: #0090e7;
+    border-color: #0090e7;
+    position: relative;
+ 
+
+}
+.label{
+    color: #2A3038;
+}
+.file{
+    background-color: #191e2c;
+    position: relative;
+    margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 6px 12px;
+}
+input[type="file"] {
+    display: none;
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: pre;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #0090e7;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px ;
+    position: relative;
+    top: 14px;
+}
+.namefile{
+    border: 1px solid  #2c2e33;
+    height: calc(2.25rem + 2px);
+    font-weight: normal;
+    font-size: 0.875rem;
+    padding: 0.625rem 0.6875rem;
+    background-color: #191e2c;
+    border-radius: 2px;
+    color: #ffffff;
+    width:600px;
+    position: relative;
+    top: 10px;
+}
+.button{
+    background-color: #0090e7;
+    position: relative;
+    border-radius: 5px;
+    padding: 10px 100px;
+    color: #fff;
+    border-color: #0090e7;
+    left: 200px;
+    top: 40px;
+}
+.alert{
+    height: calc(2.25rem + 2px);
+    font-weight: normal;
+    font-size: 1.3rem;
+    padding: 0.625rem 0.6875rem;
+    background-color: #191c24;
+    border-radius: 2px;
+    width:500px;
+    left: 130px;
+    color: rgb(255, 13, 13);
+    position: relative;
+    top: 30px;
+}

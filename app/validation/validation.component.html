@@ -1,0 +1,74 @@
+
+<div class="tableau">
+    <div class="form"> 
+    <h2>{{alertmess}}</h2>
+    <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)" >
+         
+        
+            <table *ngFor="let item of dataArray">
+                <tr>
+                    <td>
+                <input type="text" [(ngModel)]="item.mois" [ngModelOptions]="{standalone: true}" name="mois" class="input1">
+                </td>
+                <td>
+                <input type="text" [(ngModel)]="item.name" [ngModelOptions]="{standalone: true}" name="name" class="input1">
+                </td>
+                </tr>
+                <tr>
+                    <td class="cont">
+                        <h3>date</h3>
+                    </td>
+                    
+                    <td class="cont">
+                        <h3>operation</h3>
+                    </td>
+                    <td class="cont">
+                        <h3>debit</h3>
+                    </td>
+                    <td class="cont">
+                        <h3>credit</h3>
+                    </td>
+                    <td class="cont">
+                        <h3>commentaire</h3>
+                    </td>
+                   
+                </tr>
+                <tr *ngFor="let it of item.listoperation">
+                    <td>
+                        <input type="text" [(ngModel)]="it.date" name="date" [ngModelOptions]="{standalone: true}" class="input">
+                    </td>
+                    
+                    <td >
+                        <input type="text" [(ngModel)]="it.operations" [ngModelOptions]="{standalone: true}" name="operation" class="input" >
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="it.debit" [ngModelOptions]="{standalone: true}" name="debit" class="input">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="it.credit" [ngModelOptions]="{standalone: true}" name="credit" class="input">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="it.comment" [ngModelOptions]="{standalone: true}" name="comment" class="input">
+                    </td>
+                    <td>
+                        <input type="checkbox" class="inputcheck">
+                    </td>
+                    <td>
+                        <input type="file" >
+                    </td>
+
+                </tr>
+            </table>
+      
+    <input type="submit" value="submit" class="submit">
+</form>
+    </div>
+</div>
+<!--
+{{dataArray[0].mois}}
+{{dataArray[1].mois}}
+<form #userPost="ngForm" (ngSubmit)="onSubmit()" *ngFor="let item of dataArray;let index = index;trackBy:trackByIndex;">
+    
+    <input type="text" name="description" [(ngModel)]="dataArray[index].mois">{{dataArray[index].mois}}
+    <button type="submit">submit</button>
+</form>-->

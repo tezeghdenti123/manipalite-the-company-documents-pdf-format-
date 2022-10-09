@@ -1,0 +1,39 @@
+<div class="container">
+
+    <!--<form #userPost="ngForm" name="form" class="form" (ngSubmit)="onSubmit(userPost.value)">
+        <label class="label">to upload File put the path</label>
+        <br>
+        <input type="text" placeholder="path"  name="id" [(ngModel)]="value1" class="input">
+    <input type="submit" value="submit" class="submit">
+        
+    </form>-->
+    <table>
+    <tr>
+        <td>
+            <input type="text" disabled="" value="{{nmfile}}" placeholder="Upload File" class="namefile">
+        </td>
+        <td>
+        <label for="file-upload" class="custom-file-upload">
+         Upload
+    </label>
+    <input id="file-upload" type="file" (change)="getFile($event)" />
+    </td>
+    </tr>
+    <tr>
+        <input type="text" disabled="" value="{{alertmess}}" class="alert">
+    </tr>
+     
+    </table>
+    <!--<div class="form-group">
+        <label>File upload</label>
+        <input type="file" name="img[]" class="file-upload-default" (change)="getFile($event)">
+        <div class="input-group col-xs-12">
+          <input type="text" class="form-control file-upload-info"  placeholder="Upload File">
+          <span class="input-group-append">
+            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+          </span>
+        </div>
+    </div>-->
+    
+</div>
+

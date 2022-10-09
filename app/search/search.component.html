@@ -1,0 +1,125 @@
+<!--<div class="container">
+    <form #get="ngForm" name="form" (ngSubmit)="getall()">
+        <input type="text" placeholder="Search by date" name="med" ngModel>
+        <input type="submit" value="Search">
+    </form>
+    
+</div>
+<div class="tableau">
+    <table >
+        <tr *ngFor="let item of dataArray">
+        <td >
+            <input type="text" value="{{item.mois}}">
+            <table>
+                <tr>
+                    <th>
+                        date
+                        
+                    </th>
+                    
+                    <th >
+                       operation
+                    </th>
+                    <th>
+                        debit
+                    </th>
+                    <th>
+                        credit
+                    </th>
+                </tr>
+                <tr *ngFor="let it of item.listoperation">
+                    <td>
+                        <input type="text" value="{{it.date}}">
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <input type="text" value="{{it.operations}}">
+                    </td>
+                    <td>
+                        <input type="text" value="{{it.debit}}">
+                    </td>
+                    <td>
+                        <input type="text" value="{{it.credit}}">
+                    </td>
+                </tr>
+            </table>
+        </td>
+        </tr>
+    </table>
+</div>
+
+<button type="button" pButton label="PrimeNg"></button>
+
+-->
+
+
+
+
+<p-table #todoTable [value]="table"  sortMode="multiple"responsiveLayout="scroll"  [globalFilterFields]="['mois','name','operations','debit','credit']">
+    <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(todoTable)"></button>
+           
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="todoTable.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+            </span>
+            <form (submit)="submit()">
+                <input type="date" name="date" [(ngModel)]="date" class="inp">
+                <input type="submit" value="submit" class="submit">
+                </form>
+        </div>
+        
+    </ng-template>
+    <ng-template pTemplate="header">
+        
+        <tr>
+            <th pSortableColumn="mois">mois<p-sortIcon field="mois"></p-sortIcon></th>
+            <th pSortableColumn="name">société<p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="listoperation[0].date">date<p-sortIcon field="listoperation[0].date"></p-sortIcon></th>
+            <th pSortableColumn="operations">operation<p-sortIcon field="operations"></p-sortIcon></th>
+            <th pSortableColumn="debit">debit<p-sortIcon field="debit"></p-sortIcon></th>
+            <th pSortableColumn="credit">credit<p-sortIcon field="credit"></p-sortIcon></th>
+        </tr>
+        <tr>
+            <th>
+                <p-columnFilter type="text" (input)="filter($event.target.value)" field="mois" class="mois"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" (input)="filteroperation($event.target.value)" field="name" class="mois"></p-columnFilter>
+            </th>
+            <th>
+                <input type="text" (input)="filter($event.target.value)" field="date" class="inputn">
+
+            </th>
+             <th>
+                <input type="text" (input)="filteroperation($event.target.value)" field="operations" class="inputn">
+            </th>
+            <th>
+                <input type="text" (input)="filterdebit($event.target.value)" field="debit" class="inputn">
+            </th>
+            <th>
+                <input type="text" (input)="filtercredit($event.target.value)" field="credit" class="inputn">
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-table>
+        <tr *ngFor="let it of table.listoperation">
+            <td>{{table.mois}}</td>
+            <td>{{table.name}}</td>
+            <td>{{it.date}}</td>
+            <td>{{it.operations}}</td>
+            <td>{{it.debit}}</td>
+            <td>{{it.credit}}</td>
+            
+        </tr>
+        
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="6">No operation found.</td>
+        </tr>
+    </ng-template>
+</p-table>
